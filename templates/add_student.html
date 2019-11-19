@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Add New Student</title>
+</head>
+<body>
+  <h2>New Student</h2>
+  <br>
+  <form action="/student/add" method="POST">
+    <input type="text" name="first" placeholder="Frist Name"></input>
+    <input type="text" name="last" placeholder="Last Name"></input>
+    <br>
+    <br>
+    <button type="submit">Add Student</button>
+  </form>
+  <br>
+  <br>
+  <!-- Display message -->
+  <font color="red"><b>{{message}}</b></font>
+</body>
+</html>

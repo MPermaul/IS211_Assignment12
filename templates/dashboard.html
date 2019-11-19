@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div>
+        <a href="/results">Add Quiz Result</a> &nbsp; <a href="/logout">Logout</a>
+    </div>
+    <br>
+    <div>
+        <table>
+            <h2>Students:</h2>
+            <tr>
+                <th>Student Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Actions</th>
+            </tr>
+            {% for student in student_data %}
+            <tr>
+                <td>{{ student[0] }}</td>
+                <td>{{ student[1] }}</td>
+                <td>{{ student[2] }}</td>
+                <td>
+                    <a href="/student/{{ student[0] }}">View Results</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+    <form action="/student" method="POST">
+        <button type="submit">Add Student</button>
+    </form>
+    <br>
+    <br>
+    <h2>Quizzes:</h2>
+    <div>
+        <table>
+            <tr>
+                <th>Quiz Id</th>
+                <th>Subject</th>
+                <th>Number of Question</th>
+                <th>Quiz Date</th>
+            </tr>
+            {% for quiz in quiz_data %}
+            <tr>
+                <td>{{ quiz[0] }}</td>
+                <td>{{ quiz[1] }}</td>
+                <td>{{ quiz[2] }}</td>
+                <td>{{ quiz[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <br>
+    <form action="/quiz" method="POST">
+        <button type="submit">Add Quiz</button>
+    </form>
+    <br>
+    <br>
+    <!-- Display message -->
+    <font color="red"><b>{{message}}</b></font>
+</body>
+</html>

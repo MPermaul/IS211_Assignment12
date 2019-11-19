@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Results</title>
+</head>
+<body>
+    <h2>Quiz Results</h2>
+    <br>
+    <div class="form-inputs">
+        <form action="/results/add" method="POST">
+            <span>Student:</span>
+                <select name="student" required>
+                    <option value="">Select Student</option>
+                    {% for student in students %}
+                    <option value="{{ student[0] }}">{{ student[1] + " " + student[2] }}</option>
+                    {% endfor %}
+                </select>
+            <span>Quiz:</span>
+                <select name="quiz" required>
+                    <option value="">Select Quiz</option>
+                    {% for quiz in quizzes %}
+                    <option value="{{ quiz[0] }}">{{ quiz[1] }}</option>
+                    {% endfor %}
+                </select>
+            <span>Score:</span>
+            <input type="number" name="score" required placeholder="Score">
+            <button class="submit">Add Result</button>
+        </form>
+        </div>
+  <br>
+  <br>
+  <!-- Display message -->
+  <font color="red"><b>{{message}}</b></font>
+</body>
+</html>
