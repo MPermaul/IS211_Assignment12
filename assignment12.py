@@ -4,7 +4,7 @@ import sqlite3 as lite
 
 
 DATABASE = './hw12.db'
-DEBUG = True
+DEBUG = False
 SECRET_KEY = os.urandom(24)
 message = ''
 
